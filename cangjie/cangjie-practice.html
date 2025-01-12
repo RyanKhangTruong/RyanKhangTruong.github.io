@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cangjie Practice</title>
+    <link rel="stylesheet" href="cangjie-style.css">
+    <script src="cangjie-script.js"></script>
+</head>
+<body>
+    <div id="hanzi-box">
+    </div>
+    <div id="answer-box">
+    </div>
+    <div id="input-box">
+
+    </div>
+    <div id="keyboard">
+        <div id="top-row-keys">
+            <button type="button" onclick="insertKey('Q')">Q</button>
+            <button type="button" onclick="insertKey('W')">W</button>
+            <button type="button" onclick="insertKey('E')">E</button>
+            <button type="button" onclick="insertKey('R')">R</button>
+            <button type="button" onclick="insertKey('T')">T</button>
+            <button type="button" onclick="insertKey('Y')">Y</button>
+            <button type="button" onclick="insertKey('U')">U</button>
+            <button type="button" onclick="insertKey('I')">I</button>
+            <button type="button" onclick="insertKey('O')">O</button>
+            <button type="button" onclick="insertKey('P')">P</button>
+        </div>
+        <div id="home-row-keys">
+            <button type="button" onclick="insertKey('A')">A</button>
+            <button type="button" onclick="insertKey('S')">S</button>
+            <button type="button" onclick="insertKey('D')">D</button>
+            <button type="button" onclick="insertKey('F')">F</button>
+            <button type="button" onclick="insertKey('G')">G</button>
+            <button type="button" onclick="insertKey('H')">H</button>
+            <button type="button" onclick="insertKey('J')">J</button>
+            <button type="button" onclick="insertKey('K')">K</button>
+            <button type="button" onclick="insertKey('L')">L</button>
+        </div>
+        <div id="bottom-row">
+            <button type="button" id="show-answers" onclick="showAnswers()">
+                Show Valid Codes
+            </button>
+            <div id="bottom-row-center">
+                <div id="bottom-row-keys">
+                    <button type="button" onclick="insertKey('X')">X</button>
+                    <button type="button" onclick="insertKey('C')">C</button>
+                    <button type="button" onclick="insertKey('V')">V</button>
+                    <button type="button" onclick="insertKey('B')">B</button>
+                    <button type="button" onclick="insertKey('N')">N</button>
+                    <button type="button" onclick="insertKey('M')">M</button>
+                </div>
+                <button type="button" id="spacebar" 
+                onclick="checkInput()"></button>
+            </div>
+            <button type="button" id="backspace" onclick="removeKey()">
+                Back-space
+            </button>
+        </div>
+    </div>
+</body>
+</html>

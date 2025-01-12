@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: #f1f2f6;
+    font-weight: bold;
+    font-family: Arial;
+    justify-content: center;
+    align-items: center;
+}
+
+#hanzi-box, #input-box, #answer-box {
+    /* border: min(3px, 0.5vw) solid #f1f2f6; */
+    width: min(600px, 100vw);
+    margin: 0 auto 0 auto;
+    display: flex;
+}
+
+#hanzi-box {
+    height: min(300px, 62.5vw); /* 62.5% 480 */
+    font-size: min(288px, 60vw); /* 60% 480 */
+    font-family: "KaiTi", "Kaiti TC";
+    font-weight: normal;
+}
+
+#answer-box {
+    height: min(180px, 30vw);
+    display: grid;
+}
+
+#answer-box > * {
+    display: flex;
+}
+
+#input-box {
+    height: min(90px, 15vw);
+    font-size: min(60px, 10vw);
+}
+
+
+#keyboard button {
+    border: min(3px, 0.5vw) solid #f1f2f6;
+    width: min(60px, 10vw);
+    height: min(60px, 10vw);
+    border-radius: min(15px, 2.5vw);
+    font-size: min(30px, 5vw);
+}
+
+#top-row-keys, #home-row-keys, #bottom-row, #bottom-row-keys {
+    display: flex;
+}
+
+.bottom-row-center {
+    flex-direction: column;
+}
+
+#keyboard #spacebar {
+    width: min(360px, 60vw);
+    height: min(60px, 10vw);
+}
+
+#keyboard #backspace, #keyboard #show-answers {
+    width: min(120px, 20vw);
+    height: min(120px, 20vw);
+    font-size: min(24px, 4vw);
+}
