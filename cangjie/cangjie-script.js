@@ -1,5 +1,6 @@
-let cangjie_dict = {};
-let random_int;
+let cangjie_dict = {}, random_int;
+let cangjie_str, comma_index;
+let cangjie5_arr, cangjie3_code; 
 
 // Fetches Cangjie v3 and v5 codes from text file & sets first hanzi
 window.onload = function() {
@@ -28,6 +29,21 @@ function assignHanzi() {
     random_int = Math.floor(Math.random() * 20902) + 19968;
     const hanzi_box = document.getElementById("hanzi-box");
     hanzi_box.innerText = String.fromCharCode(random_int);
+
+    cangjie_str = cangjie_dict[random_int];
+    comma_index = cangjie_str.indexOf(',');
+
+    if (comma_index > -1) {
+        cangjie5_arr = cangjie_str.substring(0, comma_index)
+        .toUpperCase().split(" ");
+
+        cangjie3_code = cangjie_str.substring(comma_index + 1)
+        .toUpperCase();
+    } else {
+        cangjie5_arr = cangjie_str.toUpperCase().split(" ");
+
+        cangjie3_code = null;
+    }
 }
 
 function insertKey(char) {
@@ -46,22 +62,8 @@ function removeKey() {
 
 function showAnswers() {
     const answer_box = document.getElementById("answer-box");
+
     if (answer_box.innerHTML.trim() === "") {
-        const cangjie_str = cangjie_dict[random_int];
-        const comma_index = cangjie_str.indexOf(',');
-        let cangjie5_arr;
-        let cangjie3_code = "";
-        
-        if (comma_index > -1) {
-            cangjie5_arr = cangjie_str.substring(0, comma_index)
-            .toUpperCase().split(" ");
-
-            cangjie3_code = cangjie_str.substring(comma_index + 1)
-            .toUpperCase();
-        } else {
-            cangjie5_arr = cangjie_str.toUpperCase().split(" ");
-        }
-
         const code_count = cangjie5_arr.length + (comma_index > -1);
 
         // Adjusts size of answers
@@ -95,29 +97,10 @@ function showAnswers() {
 function checkInput() {
     const user_input = document.getElementById("input-box").innerText;
 
-    // Prevents empty user input from matching with empty Cangjie 3 code
-    if (user_input !== "") {
-        const cangjie_str = cangjie_dict[random_int];
-        const comma_index = cangjie_str.indexOf(',');
-        let cangjie5_arr;
-        let cangjie3_code = "";
-        
-        if (comma_index > -1) {
-            cangjie5_arr = cangjie_str.substring(0, comma_index)
-            .toUpperCase().split(" ");
-
-            cangjie3_code = cangjie_str.substring(comma_index + 1)
-            .toUpperCase();
-        } else {
-            cangjie5_arr = cangjie_str.toUpperCase().split(" ");
-        }
-
-        if (cangjie5_arr.includes(user_input) 
-            || cangjie3_code === user_input) {
-            assignHanzi();
-            document.getElementById("input-box").innerHTML = "";
-            document.getElementById("answer-box").innerHTML = "";
-        }
+    if (cangjie5_arr.includes(user_input) || cangjie3_code === user_input) {
+        assignHanzi();
+        document.getElementById("input-box").innerHTML = "";
+        document.getElementById("answer-box").innerHTML = "";
     }
 }
 
