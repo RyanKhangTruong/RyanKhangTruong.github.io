@@ -8,6 +8,7 @@
     font-family: Arial;
     justify-content: center;
     align-items: center;
+    touch-action: manipulation;
 }
 
 #hanzi-box, #input-box, #answer-box {
