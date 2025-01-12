@@ -12,7 +12,7 @@
     font-weight: bold;
     font-family: Arial;
     justify-content: center;
-    align-items: center;
+    touch-action: manipulation;
 }
 
 #hanzi-box, #input-box, #answer-box {
@@ -20,6 +20,7 @@
     width: min(600px, 100vw);
     margin: 0 auto 0 auto;
     display: flex;
+    align-items: center;
 }
 
 #hanzi-box {
