@@ -128,7 +128,8 @@ document.addEventListener("keydown", (event) => {
         insertKey(key_name);
     } else if (key_name === "BACKSPACE") {
         removeKey();
-    } else if (key_name === " ") {
+    } else if (key_name === " " && event.target == document.body) {
+        event.preventDefault();
         checkInput();
     }
 });
