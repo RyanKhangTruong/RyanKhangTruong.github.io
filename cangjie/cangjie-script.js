@@ -1,4 +1,4 @@
-let cangjie_dict = {}, random_int;
+let cangjie_list, random_int;
 let cangjie_str, comma_index;
 let cangjie5_arr, cangjie3_code; 
 
@@ -7,17 +7,7 @@ window.onload = function() {
     const xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
-        const cangjie_list = this.responseText.split(/\r?\n/);
-        cangjie_dict = {};
-
-        cangjie_list.forEach(
-            (cangjie_row) => {
-                cangjie_dict[
-                    Number("0x" + cangjie_row.substring(0, 4))
-                ] = cangjie_row.substring(4)
-            }
-        );
-
+        cangjie_list = this.responseText.split(/\r?\n/);
         assignHanzi();
     }
 
@@ -26,11 +16,13 @@ window.onload = function() {
 }
 
 function assignHanzi() {
-    random_int = Math.floor(Math.random() * 20902) + 19968;
+    // CJK Unified Ideographs has 20902 characters in total
+    random_int = Math.floor(Math.random() * 20902);
     const hanzi_box = document.getElementById("hanzi-box");
-    hanzi_box.innerText = String.fromCharCode(random_int);
+    // Adjusting random_int to the CJK Unified Ideographs Block
+    hanzi_box.innerText = String.fromCharCode(random_int + 19968);
 
-    cangjie_str = cangjie_dict[random_int];
+    cangjie_str = cangjie_list[random_int];
     comma_index = cangjie_str.indexOf(',');
 
     if (comma_index > -1) {
@@ -63,7 +55,7 @@ function removeKey() {
 function showAnswers() {
     const answer_box = document.getElementById("answer-box");
 
-    if (answer_box.innerHTML.trim() === "") {
+    if (answer_box.innerHTML === "") {
         const code_count = cangjie5_arr.length + (comma_index > -1);
 
         // Adjusts size of answers
