@@ -55,7 +55,7 @@ function removeKey() {
 function showAnswers() {
     const answer_box = document.getElementById("answer-box");
 
-    if (answer_box.innerHTML === "") {
+    if (answer_box.innerHTML.trim() === "") {
         const code_count = cangjie5_arr.length + (comma_index > -1);
 
         // Adjusts size of answers
