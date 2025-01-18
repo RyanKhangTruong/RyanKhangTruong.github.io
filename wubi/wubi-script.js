@@ -25,7 +25,7 @@ function assignHanzi() {
 
 function insertKey(char) {
     const input_text = document.getElementById("input-box");
-    if (input_text.innerText.length < 5) {
+    if (input_text.innerText.length < 4) {
         input_text.innerText += char;
     }
 }
