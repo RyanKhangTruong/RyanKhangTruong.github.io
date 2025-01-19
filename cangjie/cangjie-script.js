@@ -73,14 +73,14 @@ function showAnswers() {
         // Cangjie 5 codes are in green
         cangjie5_arr.forEach(
             (cangjie5_code) => {
-                answer_box.innerHTML += `<span style="color: green">
+                answer_box.innerHTML += `<span style="color: #1e90ff">
                 ${cangjie5_code}</span>`;
             }
         )
 
         // Distinguishes incompatible Cangjie 3 code in red
         if (comma_index > -1) {
-            answer_box.innerHTML += `<span style="color: red">
+            answer_box.innerHTML += `<span style="color: #6a5acd">
             ${cangjie3_code}</span>`;
         }
     }

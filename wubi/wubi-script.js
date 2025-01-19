@@ -54,7 +54,7 @@ function showAnswers() {
 
         wubi_arr.forEach(
             (wubi_code) => {
-                answer_box.innerHTML += `<span style="color: green">
+                answer_box.innerHTML += `<span style="color: #1e90ff">
                 ${wubi_code}</span>`;
             }
         )
