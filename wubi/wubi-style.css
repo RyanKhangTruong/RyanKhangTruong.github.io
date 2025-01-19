@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
     font-family: "Kaiti";
-    src: url("kaiu.ttf");
-} */
+    src: url("FZKai-Z03S Regular.ttf");
+}
 
 * {
     margin: 0;
@@ -26,7 +26,7 @@
 #hanzi-box {
     height: min(300px, 62.5vw); /* 62.5% 480 */
     font-size: min(288px, 60vw); /* 60% 480 */
-    /* font-family: "Kaiti"; */
+    font-family: "Kaiti";
     font-weight: normal;
 }
 
