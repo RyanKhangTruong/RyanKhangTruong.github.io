@@ -82,4 +82,6 @@ document.addEventListener("keydown", (event) => {
         event.preventDefault();
         checkInput();
     }
+
+    document.activeElement.blur();
 });
