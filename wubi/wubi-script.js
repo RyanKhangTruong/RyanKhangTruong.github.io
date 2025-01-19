@@ -19,6 +19,8 @@ function assignHanzi() {
     const hanzi_box = document.getElementById("hanzi-box");
     // Adjusting random_int to the CJK Unified Ideographs Block
     hanzi_box.innerText = String.fromCharCode(random_int + 19968);
+    // Forcing fonts on mobile devices
+    hanzi_box.style.fontFamily = "Kaiti";
 
     wubi_arr = wubi_list[random_int].toUpperCase().split(" ");
 }
