@@ -1,11 +1,6 @@
 @font-face {
     font-family: "Kaiti";
-    src: url("FZKai-Z03S Regular.ttf");
-    src: url('FZKai-Z03S Regular.eot?#iefix') format('embedded-opentype'), 
-         url('FZKai-Z03S Regular.woff2') format('woff2'), 
-         url('FZKai-Z03S Regular.woff') format('woff'), 
-         url('FZKai-Z03S Regular.ttf') format('truetype'), 
-         url('FZKai-Z03S Regular.svg') format('svg');
+    src: url("FZKai-Z03S-Regular.ttf");
 }
 
 * {
