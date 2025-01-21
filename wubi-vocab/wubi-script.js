@@ -22,7 +22,7 @@ function assignHanzi() {
     code_len = wubi_vocab.length; console.log(code_len)
     // Assign wubi vocab to screen
     const hanzi_box = document.getElementById("hanzi-box");
-    hanzi_box.style.fontSize = `min(${288 / code_len}px, ${60 / code_len}vw)`;
+    hanzi_box.style.fontSize = `min(${576 / code_len}px, ${96 / code_len}vw)`;
     hanzi_box.innerText = wubi_vocab
 }
 
