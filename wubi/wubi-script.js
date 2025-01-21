@@ -1,6 +1,6 @@
 let wubi_list, random_int, wubi_arr;
 
-// Fetches wubi v3 and v5 codes from text file & sets first hanzi
+// Fetches wubi codes from text file & sets first hanzi
 window.onload = function() {
     const xhr = new XMLHttpRequest();
 
