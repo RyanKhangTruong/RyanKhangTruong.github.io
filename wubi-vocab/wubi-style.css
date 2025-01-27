@@ -7,8 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f1f2f6;
-    color: black;
+    background-color: black;
+    color: #f1f2f6;
     font-weight: bold;
     font-family: Arial;
     justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 #keyboard button {
-    border: min(3px, 0.5vw) solid black;
+    border: min(3px, 0.5vw) solid #f1f2f6;
     width: min(60px, 10vw);
     height: min(60px, 10vw);
     border-radius: min(15px, 2.5vw);
